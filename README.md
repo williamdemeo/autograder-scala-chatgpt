@@ -243,7 +243,7 @@ The script will compile the Scala source files, run the JUnit tests, and generat
 
 ## ChatGPT's Second Revised Response
 
-**Autograder-ver1**
+**AutograderExample-ver1**
 
 
 Sure! Here's an example of a Scala programming project that includes JUnit tests and a `run_autograder` script. The project consists of two Scala programs: `CorrectProgram.scala` and `IncorrectProgram.scala`. The `run_autograder` script runs JUnit tests on both programs and generates a `results.json` file according to the Gradescope specification.
