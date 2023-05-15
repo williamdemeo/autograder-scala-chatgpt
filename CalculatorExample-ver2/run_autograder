@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Compile the Scala source files
+scalac -cp junit-4.12.jar:. *.scala
+
+# Run the JUnit tests and generate the results in JSON format
+java -cp junit-4.12.jar:hamcrest-core-1.3.jar:scala-library.jar:. org.junit.runner.JUnitCore CalculatorTest > results.txt
+
+# Parse the results and generate the JSON output
+echo "[" > results.json
+awk -F'[(|)]' '/\[.*\]/ {print "{\"output\":\"" $2 "\",\"score\":" (($3=="") ? "0" : $3) "},"}' results.txt >> results.json
+echo "]" >> results.json
+
+# Clean up
+rm -f *.class
+rm -f results.txt

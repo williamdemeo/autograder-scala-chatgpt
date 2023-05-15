@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Compile the source files
+scalac -cp "lib/junit-4.XX.jar:lib/hamcrest-core-1.3.jar" src/main/scala/*.scala src/test/scala/*.scala -d bin
+
+# Run the JUnit tests and generate results.json
+java -cp "lib/junit-4.XX.jar:lib/hamcrest-core-1.3.jar:bin" org.junit.runner.JUnitCore AutograderTest > results.json
