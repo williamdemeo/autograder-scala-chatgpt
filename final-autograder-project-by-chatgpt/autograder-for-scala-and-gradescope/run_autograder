@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir -p build
+cp -R src/test/scala build/
+
+echo '{
+  "tests": [' > build/test_report.json
+
+sbt test 2>&1 | awk '/\[info\] Running/ { testname=$4; } /\[info\] Test run started/ { print "{\"name\":\"" testname "\","; print "\"output\":\"";  } /\[info\] Test run finished/ { print "\","; print "\"score\":" ((testname == "CorrectProgram.sum") ? "1" : "0") "},"; }' >> build/test_report.json
+
+echo '],
+  "stdout_visibility": "visible"
+}' >> build/test_report.json
+
+mv build/test_report.json results.json

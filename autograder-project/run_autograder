@@ -1,0 +1,2 @@
+#!/bin/bash
+sbt "test:runMain com.gradescope.jh61b.grader.TextJSONAutograderRunner --format=JSON --output=results.json"
