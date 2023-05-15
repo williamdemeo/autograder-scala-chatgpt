@@ -1,3 +1,17 @@
+# autograder-scala-chatgpt
+
+I asked ChatGPT to configure an GradeScope autograder for Scala projects for me.
+
+ChatGPT instantly produced the answer below which is astonishingly close to a complete solution to a problem that has been plaguing me for the past few days.
+
+
+## My Request
+
+*"Create an example Scala programming project that includes JUnit tests as well as a `run_autograder` script.  The `run_autograder` script should run the tests and produce an output file called `results.json` that conforms to the Gradescope specification."*
+
+
+## ChatGPT's Response
+
 Sure! Here's an example Scala programming project that includes JUnit tests and a `run_autograder` script that runs the tests and produces the `results.json` output file according to the Gradescope specification:
 
 First, let's set up the project structure. Create a directory called `autograder` and navigate to it:
